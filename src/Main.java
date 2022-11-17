@@ -27,8 +27,6 @@ public class Main extends guessTheNumberGame{
         button.setBounds(100,100,100,100);
         button.setBorder(BorderFactory.createEtchedBorder());
 
-
-
         MyFrame mainFrame = new MyFrame();
         mainFrame.middlePanel.add(logoLabel);
         mainFrame.bottomPanel.add(button);
@@ -42,21 +40,6 @@ public class Main extends guessTheNumberGame{
 
             }
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         //GuessTheNumberGame();
 

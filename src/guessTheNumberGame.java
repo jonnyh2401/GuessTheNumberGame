@@ -118,7 +118,7 @@ public class guessTheNumberGame extends MyFrame {
     public static void gameLogic() {
         if (checkForValue(guessedNumber) == false) {
             guessCounter++;
-            if (guessCounter < 10) {
+            if (guessCounter <= 10) {
                 if (guessedNumber < numberToGuess) {
                     //Guess to low
                     resultText = "Guess too Low!";
