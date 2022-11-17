@@ -5,6 +5,8 @@ public class MyFrame extends JFrame {
     JPanel topPanel;
     JPanel guessPanel;
     JPanel middlePanel;
+    //JPanel bottomPanel;
+
     JPanel bottomPanel;
 
 
@@ -21,6 +23,7 @@ public class MyFrame extends JFrame {
         middlePanel.setBounds(0,70,500,215);
         bottomPanel.setBounds(0,295,500,215);
         bottomPanel.setLayout(new BorderLayout());
+        //bottomPanel.setLayout(new GridBagLayout());
         topPanel.setLayout(new BorderLayout());
         guessPanel.setLayout(new GridLayout(2, 0));
         guessPanel.setBackground(Color.LIGHT_GRAY);
