@@ -22,16 +22,15 @@ public class guessTheNumberGame extends MyFrame {
 
         MyFrame gameFrame = new MyFrame();
 
-        MyLabel instructionText = new MyLabel();
-        MyLabel remainingText = new MyLabel();
-        MyLabel guessesText = new MyLabel();
-        MyLabel previousGuessText = new MyLabel();
+        MyLabel instructionText = new MyLabel(18);
+        MyLabel remainingText = new MyLabel(12);
+        MyLabel guessesText = new MyLabel(15);
+        MyLabel previousGuessText = new MyLabel(17);
 
         MyTextField numberToGuessEntry = new MyTextField();
         MyTextField guessedNumberEntry = new MyTextField();
 
         instructionText.setText("Enter the number you want people to guess!");
-        instructionText.setFont(new Font("Comic Sans", Font.BOLD, 18));
         instructionText.setHorizontalAlignment(JLabel.CENTER);
         instructionText.setHorizontalAlignment(JLabel.CENTER);
 
@@ -42,11 +41,9 @@ public class guessTheNumberGame extends MyFrame {
         previousGuessText.setVisible(false);
 
         guessesText.setHorizontalAlignment(JLabel.CENTER);
-        guessesText.setFont(new Font("Comic Sans", Font.BOLD, 15));
 
         previousGuessText.setHorizontalAlignment(JLabel.CENTER);
         previousGuessText.setText("Previous Guesses");
-        previousGuessText.setFont(new Font("Comic Sams", Font.BOLD, 17));
 
         gameFrame.middlePanel.setLayout(new BorderLayout());
         gameFrame.middlePanel.add(instructionText);
@@ -57,6 +54,8 @@ public class guessTheNumberGame extends MyFrame {
 
 
 
+
+        // Method once number to guess has been entered!
         numberToGuessEntry.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -71,6 +70,7 @@ public class guessTheNumberGame extends MyFrame {
             }
         });
 
+        // Guessed number method
         guessedNumberEntry.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
