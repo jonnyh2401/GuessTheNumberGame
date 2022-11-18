@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a622c83-630a-4463-9360-f6ccf8b4e125" name="Changes" comment="Fixed 10th guess">
-      <change afterPath="$PROJECT_DIR$/src/MyGridPanel.java" afterDir="false" />
+    <list default="true" id="1a622c83-630a-4463-9360-f6ccf8b4e125" name="Changes" comment="Fixed 10th guesss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyButton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyPanel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/guessTheNumberGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessTheNumberGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668674037293</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Fixed 10th guesss">
+      <created>1668685056954</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1668685056954</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,7 +100,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed 10th guess" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed 10th guess" />
+    <MESSAGE value="Fixed 10th guesss" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed 10th guesss" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
