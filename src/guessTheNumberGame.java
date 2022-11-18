@@ -1,5 +1,7 @@
 import javax.swing.*;
-import javax.swing.border.LineBorder;
+import javax.swing.text.SimpleAttributeSet;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyledDocument;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,12 +26,15 @@ public class guessTheNumberGame extends MyFrame {
         MyFrame gameFrame = new MyFrame();
 
         MyLabel instructionText = new MyLabel(18);
-        MyLabel remainingText = new MyLabel(12);
-        MyLabel guessesTextLow = new MyLabel(12);
-        MyLabel guessesTextHigh = new MyLabel(12);
-        MyLabel previousGuessText = new MyLabel(12);
-        MyLabel lowText = new MyLabel(12);
-        MyLabel highText = new MyLabel(12);
+        MyLabel remainingText = new MyLabel(16);
+        //MyLabel guessesTextLow = new MyLabel(12);
+        //MyLabel guessesTextHigh = new MyLabel(12);
+        MyLabel lowText = new MyLabel(16);
+        MyLabel highText = new MyLabel(16);
+
+        JTextPane leftTextArea = new JTextPane();
+        JTextPane rightTextArea = new JTextPane();
+
 
         MyTextField numberToGuessEntry = new MyTextField();
         MyTextField guessedNumberEntry = new MyTextField();
@@ -39,40 +44,60 @@ public class guessTheNumberGame extends MyFrame {
         instructionText.setHorizontalAlignment(JLabel.CENTER);
 
         remainingText.setText("Guesses Remaining: 10");
-        remainingText.setHorizontalAlignment(JLabel.CENTER);
-        remainingText.setVerticalAlignment(JLabel.BOTTOM);
-        remainingText.setHorizontalAlignment(JLabel.CENTER);
-        remainingText.setVerticalTextPosition(JLabel.BOTTOM);
         remainingText.setVisible(false);
-        previousGuessText.setVisible(false);
 
-        previousGuessText.setHorizontalAlignment(JLabel.CENTER);
-        previousGuessText.setVerticalAlignment(JLabel.TOP);
-        previousGuessText.setHorizontalTextPosition(JLabel.CENTER);
-        previousGuessText.setVerticalTextPosition(JLabel.CENTER);
-        previousGuessText.setText("Previous Guesses");
+        lowText.setVisible(false);
+        lowText.setVerticalTextPosition(JLabel.BOTTOM);
+        highText.setVisible(false);
+        highText.setVerticalTextPosition(JLabel.BOTTOM);
 
-        guessesTextLow.setVerticalAlignment(JLabel.CENTER);
-        guessesTextLow.setHorizontalTextPosition(JLabel.CENTER);
-        guessesTextHigh.setVerticalAlignment(JLabel.CENTER);
-        guessesTextHigh.setHorizontalTextPosition(JLabel.CENTER);
+        StyledDocument docLeft = leftTextArea.getStyledDocument();
+        SimpleAttributeSet centerLeft = new SimpleAttributeSet();
+        StyleConstants.setAlignment(centerLeft, StyleConstants.ALIGN_CENTER);
+        docLeft.setParagraphAttributes(0, docLeft.getLength(), centerLeft, false);
+
+        StyledDocument docRight = rightTextArea.getStyledDocument();
+        SimpleAttributeSet centerRight = new SimpleAttributeSet();
+        StyleConstants.setAlignment(centerRight, StyleConstants.ALIGN_CENTER);
+        docRight.setParagraphAttributes(0, docRight.getLength(), centerRight, false);
+
+        remainingText.setHorizontalAlignment(JLabel.CENTER);
+        remainingText.setVerticalAlignment(JLabel.TOP);
 
         lowText.setText("Low");
+        lowText.setForeground(Color.ORANGE);
         lowText.setHorizontalAlignment(JLabel.CENTER);
-        lowText.setHorizontalTextPosition(JLabel.CENTER);
+        lowText.setVerticalAlignment(JLabel.BOTTOM);
+        lowText.setFocusable(false);
+
+
+
+
+        leftTextArea.setForeground(Color.ORANGE);
+        leftTextArea.setBackground(Color.LIGHT_GRAY);
+        leftTextArea.setFont(new Font("Comic Sans", Font.BOLD, 18));
+        rightTextArea.setForeground(Color.BLUE);
+        rightTextArea.setBackground(Color.LIGHT_GRAY);
+        rightTextArea.setFont(new Font("Comic Sans", Font.BOLD, 18));
+
+
         highText.setText("High");
+        highText.setForeground(Color.BLUE);
         highText.setHorizontalAlignment(JLabel.CENTER);
-        highText.setVerticalAlignment(JLabel.CENTER);
+        highText.setVerticalAlignment(JLabel.BOTTOM);
+        highText.setFocusable(false);
+
 
         gameFrame.middlePanel.setLayout(new BorderLayout());
         gameFrame.middlePanel.add(instructionText);
         gameFrame.bottomPanel.add(numberToGuessEntry);
-        gameFrame.guessPanel.add(lowText);
-        gameFrame.guessPanel.add(previousGuessText);
-        gameFrame.guessPanel.add(highText);
-        gameFrame.guessPanel.add(guessesTextLow);
         gameFrame.guessPanel.add(remainingText);
-        gameFrame.guessPanel.add(guessesTextHigh);
+        gameFrame.leftPanel.add(lowText);
+        gameFrame.leftPanel.add(leftTextArea);
+        gameFrame.rightPanel.add(highText);
+        gameFrame.rightPanel.add(rightTextArea);
+
+        numberToGuessEntry.requestFocus();
 
         // Method once number to guess has been entered!
         numberToGuessEntry.addActionListener(new ActionListener() {
@@ -84,7 +109,9 @@ public class guessTheNumberGame extends MyFrame {
                 numberToGuessEntry.setVisible(false);
                 gameFrame.bottomPanel.add(guessedNumberEntry);
                 remainingText.setVisible(true);
-                previousGuessText.setVisible(true);
+                lowText.setVisible(true);
+                highText.setVisible(true);
+                guessedNumberEntry.requestFocus();
 
             }
         });
@@ -97,10 +124,21 @@ public class guessTheNumberGame extends MyFrame {
                     guessedNumber = Integer.parseInt(guessedNumberEntry.getText());
                     guessedNumberEntry.setText("");
                     gameLogic();
-                    // Set too low previous answers from array [*][]
-                    guessesTextLow.setText(Arrays.toString(previousGuessesLow));
-                    // Set too high previous answers from array [][*]
-                    guessesTextHigh.setText(Arrays.toString(previousGuessesHigh));
+
+                    // Print low guesses to JTextArea Left
+                    leftTextArea.setText("");
+                    rightTextArea.setText("");
+                    for (int i = 0; i < 10; i++) {
+                        if (previousGuessesLow[i] == 0) continue;
+                        leftTextArea.setText((leftTextArea.getText() + String.valueOf(previousGuessesLow[i] + "\n")));
+                    }
+
+                    // Print High guesses to JTextArea Right
+                    for (int i = 0; i < 10; i++) {
+                        if (previousGuessesHigh[i] == 0) continue;
+                        rightTextArea.setText((rightTextArea.getText() + String.valueOf(previousGuessesHigh[i] + "\n")));
+
+                    }
                     // Set remaining guesses
                     remainingText.setText("Remaining Guesses: " + (10 - guessCounter));
                     instructionText.setText(resultText);

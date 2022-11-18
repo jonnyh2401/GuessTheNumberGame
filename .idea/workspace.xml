@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a622c83-630a-4463-9360-f6ccf8b4e125" name="Changes" comment="Fixed 10th guesss">
+    <list default="true" id="1a622c83-630a-4463-9360-f6ccf8b4e125" name="Changes" comment="GUI Changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MyLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyLabel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/guessTheNumberGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/guessTheNumberGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -84,7 +83,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668685056954</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="GUI Changes">
+      <created>1668762956321</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668762956321</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -101,7 +107,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed 10th guess" />
     <MESSAGE value="Fixed 10th guesss" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed 10th guesss" />
+    <MESSAGE value="GUI Changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="GUI Changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
