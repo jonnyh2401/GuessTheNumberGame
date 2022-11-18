@@ -6,9 +6,10 @@ public class MyButton extends JButton {
 
         super.setText(text);
         this.setForeground(Color.GREEN);
-        this.setBackground(Color.GRAY);
-        this.setBounds(0,100,100,100);
-        this.setBorder(BorderFactory.createEtchedBorder());
+        this.setFont(new Font("Comic Sans", Font.BOLD, 18));
+        this.setBackground(Color.LIGHT_GRAY);
+        this.setBounds(0,0,100,70);
+        this.setContentAreaFilled(false);
 
     }
 }
